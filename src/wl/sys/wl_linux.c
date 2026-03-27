@@ -1504,7 +1504,6 @@ wl_down(wl_info_t *wl)
 		int i = 0;
 		for (i = 0; (atomic_read(&wl->callbacks) > callbacks) && i < 10000; i++) {
 			schedule();
-			flush_scheduled_work();
 		}
 	}
 	else
